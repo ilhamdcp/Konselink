@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="icd"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_counselor.model.retrofit.IcdDiagnosisCode" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_item_diagnosis_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/form_margin_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_icd_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{`ICD 9: ` + icd.icd9Code}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <TextView
+                    android:id="@+id/text_icd_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:text="@{`ICD 10: ` + icd.icd10Code}"
+                    android:textColor="@color/bg_light_red" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/text_disorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{icd.disorder}" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/fade_gray"
+            android:layout_marginTop="@dimen/form_margin_top"/>
+    </LinearLayout>
+</layout>

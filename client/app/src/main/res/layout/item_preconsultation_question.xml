@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/panas_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_panas_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/scale_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_1" />
+
+        <RadioButton
+            android:id="@+id/scale_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_2" />
+
+        <RadioButton
+            android:id="@+id/scale_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_3" />
+
+        <RadioButton
+            android:id="@+id/scale_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_4" />
+
+        <RadioButton
+            android:id="@+id/scale_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_5" />
+
+        <RadioButton
+            android:id="@+id/scale_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="@color/bg_dark_blue"
+            android:text="@string/number_6" />
+    </RadioGroup>
+</LinearLayout>

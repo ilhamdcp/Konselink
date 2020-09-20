@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/toolbar_chat" />
+
+    <com.stfalcon.chatkito.messages.MessagesList
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/input"
+        app:incomingBubbleDrawable="@drawable/bubble_incoming_message"
+        app:incomingTextColor="@color/white"
+        app:incomingTimeTextColor="@color/white"
+        app:outcomingBubbleDrawable="@drawable/bubble_outcoming_message"
+        app:outcomingTextColor="@color/gray"
+        app:outcomingTimeTextColor="@color/gray"
+        android:layout_below="@id/toolbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/input"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/gray" />
+
+    <com.stfalcon.chatkito.messages.MessageInput
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:inputButtonDefaultBgColor="@color/bg_dark_blue"
+        app:inputButtonDefaultIconColor="@color/white"
+        app:showAttachmentButton="true" />
+
+</RelativeLayout>

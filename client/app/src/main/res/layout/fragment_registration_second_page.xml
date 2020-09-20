@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.RegistrationViewModel" />
+
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.Education" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_registration_form" />
+
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_education_history" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/education_data_instruction" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/education_address_instruction" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_kindergarten_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:selectedEducation="@{viewmodel.registrationLiveData.currentEducation}"
+                android:educationType="@{Education.KINDERGARTEN.level}"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_kindergarten_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile_kindergarten"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.kindergartenData}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_kindergarten_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errKindergartenAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_elementary_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:selectedEducation="@{viewmodel.registrationLiveData.currentEducation}"
+                android:educationType="@{Education.ELEMENTARY.level}"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_elementary_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile_elementary"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.elementaryData}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_elementary_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errElementaryAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_junior_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:selectedEducation="@{viewmodel.registrationLiveData.currentEducation}"
+                android:educationType="@{Education.JUNIOR.level}">
+
+                <EditText
+                    android:id="@+id/form_junior_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile_junior"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.juniorData}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_junior_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errJuniorAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_senior_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:selectedEducation="@{viewmodel.registrationLiveData.currentEducation}"
+                android:educationType="@{Education.SENIOR.level}">
+
+                <EditText
+                    android:id="@+id/form_senior_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile_senior"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.seniorData}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_senior_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errSeniorAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_college_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:selectedEducation="@{viewmodel.registrationLiveData.currentEducation}"
+                android:educationType="@{Education.DIPLOMA.level}">
+
+                <EditText
+                    android:id="@+id/form_college_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile_college"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.collegeData}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_college_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errCollegeAddress}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/footer_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/button_fragment_second_previous"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/arrow_next"
+                    android:rotation="180"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/page_2"
+                    android:textSize="@dimen/font_size_text" />
+
+                <ImageView
+                    android:id="@+id/button_fragment_second_next"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/arrow_next" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

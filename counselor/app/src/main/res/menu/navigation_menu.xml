@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/icon_home"
+        android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/action_schedule"
+        android:icon="@drawable/icon_schedule"
+        android:title="@string/menu_schedule" />
+    <item
+        android:id="@+id/action_counselor"
+        android:icon="@drawable/icon_request"
+        android:title="@string/menu_request" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/icon_profile"
+        android:title="@string/menu_profile" />
+    <!--    <item android:id="@+id/action_consultation"-->
+    <!--        android:title="@string/menu_navigation"-->
+    <!--        android:icon="@drawable/ic_action_navigation_menu" />-->
+    <!--    <item android:id="@+id/action_profile"-->
+    <!--        android:title="@string/menu_navigation"-->
+    <!--        android:icon="@drawable/ic_action_navigation_menu" />-->
+</menu>

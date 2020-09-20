@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.SrqQuestion" />
+        <variable
+            name="vm"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.RegistrationViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/main_container_default_margin">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/HeaderText"
+                android:text="@string/srq"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/srq_description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bg_dark_red"
+                android:text="@string/ipip_warning"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_1.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_2.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_1.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_1.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_1.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_2.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_2.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_2.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_2.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_2.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_3.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_3.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_3.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_3.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_3.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_4.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_2.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_4.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_4.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_4.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_5.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_5.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_5.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_5.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_5.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_6.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_6.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_6.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_6.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_6.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_7.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_7.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_7.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_7.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_7.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_8.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_8.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_8.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_8.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_8.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_9.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_9.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_9.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_9.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_9.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_10.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_10.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_10.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_10.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_10.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_11.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_11.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_11.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_11.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_11.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_12.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_12.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_12.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_12.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_12.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_13.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_13.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_13.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_13.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_13.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_14.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_14.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_14.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_14.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_14.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_15.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_15.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_15.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_15.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_15.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_16.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_16.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_16.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_16.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_16.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_17.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_17.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_17.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_17.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_17.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_18.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_18.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_18.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_18.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_18.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SrqQuestion.QUESTION_19.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_19.question) == 1}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_19.question, 1)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getSrqAnswer(SrqQuestion.QUESTION_19.question) == 0}"
+                        android:onClick="@{() -> vm.handleSrqQuestion(SrqQuestion.QUESTION_19.question, 0)}"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/footer_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/button_fragment_srq_previous"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/arrow_next"
+                    android:rotation="180"/>
+
+                <ImageView
+                    android:id="@+id/button_fragment_srq_next"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/arrow_next" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

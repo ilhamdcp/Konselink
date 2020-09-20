@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_counselor.viewmodel.ConsultationViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_two"
+        android:theme="@style/NonMaterialTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_container_default_margin"
+            android:orientation="vertical"
+            android:paddingVertical="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_diagnosis"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        android:checked="@{viewmodel.useDiagnosis == true}"
+                        android:onClick="@{() -> viewmodel.updateUseDiagnosis(true)}"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        android:checked="@{viewmodel.useDiagnosis == false}"
+                        android:onClick="@{() -> viewmodel.updateUseDiagnosis(false)}"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_diagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red"
+                useDiagnosis="@{viewmodel.useDiagnosis == true}">
+
+                <EditText
+                    android:id="@+id/form_diagnosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/diagnosis_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.diagnosis}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_diagnosis_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red"
+                useDiagnosis="@{viewmodel.useDiagnosis == true}">
+
+                <EditText
+                    android:id="@+id/form_diagnosis_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/diagnosis_code_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{String.valueOf(viewmodel.clientRecordLiveData.diagnosisCode)}"
+                    android:textSize="@dimen/font_size_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_problem_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red"
+                useDiagnosis="@{viewmodel.useDiagnosis == false}">
+
+                <EditText
+                    android:id="@+id/form_problem_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/problem_description_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.problemDescription}"
+                    android:textSize="@dimen/font_size_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_physical_health_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_physical_health_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/physcal_health_history_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.physicalHealthHistory}"
+                    android:textSize="@dimen/font_size_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_medical_consumption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_medical_consumption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/medical_consumption_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.medicalConsumption}"
+                    android:textSize="@dimen/font_size_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_suicide_risk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/suicide_risk_required" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_suicide_risk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_self_harm_risk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/self_harm_risk_required" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_self_harm_risk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_other_harm_risk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/other_harm_risk_required" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_other_harm_risk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_assessment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_assessment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/assessment_required"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.clientRecordLiveData.assessment}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_consultation_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_consultation_purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/consultation_purpose_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.consultationPurpose}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_treatment_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_treatment_plan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/treatment_plan_required"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.clientRecordLiveData.treatmentPlan}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_meetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_meetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meetings"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:text="@{String.valueOf(viewmodel.clientRecordLiveData.meetings)}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/notes"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.clientRecordLiveData.notes}"
+                    android:textSize="@dimen/font_size_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_save_client_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/form_margin_top"
+                android:background="@drawable/button_blue_gradient"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

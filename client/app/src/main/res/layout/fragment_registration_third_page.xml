@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.RegistrationViewModel" />
+
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.Education" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_registration_form" />
+
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_family" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/father_data" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_father_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_father_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.fatherName}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_father_name"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_father_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_father_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/age"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.fatherAge.toString()}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_father_age"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherAge}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_religion_father"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/religion" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_religion_father"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_error_religion_father"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherReligion}" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_father_tribe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_father_tribe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tribe"
+                    android:inputType="textPersonName"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.fatherTribe}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_father_tribe"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherTribe}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_education_father"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/latest_education" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_education_father"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_father_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_father_occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/occupation"
+                    android:inputType="textPersonName"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.fatherOccupation}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_father_occupation"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherOccupation}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_father_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_father_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.fatherAddress}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_father_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errFatherAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mother_data" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mother_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_mother_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName"
+                    android:maxLength="32"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.motherName}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_mother_name"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mother_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_mother_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/age"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.motherAge.toString()}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_mother_age"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherAge}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_religion_mother"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/religion" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_religion_mother"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_error_religion_mother"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherReligion}" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mother_tribe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_mother_tribe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tribe"
+                    android:inputType="textPersonName"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.motherTribe}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_mother_tribe"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherTribe}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_spinner_education_mother"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/latest_education" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_registration">
+
+                    <Spinner
+                        android:id="@+id/spinner_education_mother"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mother_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_mother_occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/occupation"
+                    android:inputType="textPersonName"
+                    android:maxLength="32"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.motherOccupation}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_mother_occupation"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherOccupation}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mother_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_mother_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/address_or_domicile"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@{viewmodel.registrationLiveData.motherAddress}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_mother_address"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errMotherAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/footer_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/button_fragment_third_previous"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/arrow_next"
+                    android:rotation="180"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/page_3"
+                    android:textSize="@dimen/font_size_text" />
+
+                <ImageView
+                    android:id="@+id/button_fragment_third_next"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/arrow_next" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

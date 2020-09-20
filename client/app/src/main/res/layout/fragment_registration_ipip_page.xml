@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.RegistrationViewModel" />
+
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.IpipQuestion" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/main_container_default_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mini_ipip"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mini_ipip_description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bg_dark_red"
+                android:text="@string/ipip_warning"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_1.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_1.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_1.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_2.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_2.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_2.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_3.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_3.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_3.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_4.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_4.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_4.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_5.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_5.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_5.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_6.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_6.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_6.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_7.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_7.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_7.question, 5)}"
+                        android:text="@string/five" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_8.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_8.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_8.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_9.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_9.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_9.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_10.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_10.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_10.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_11.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_11.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_11.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_12.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_12.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_12.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_13.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_13.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_13.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_14.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_14.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_14.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_15.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_15.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_15.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_16.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_16.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_16.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_17.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_17.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_17.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_18.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_18.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_18.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_19.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_19.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_19.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{IpipQuestion.QUESTION_20.question}"
+                    android:textColor="@color/bg_dark_blue" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 0}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 0)}"
+                        android:text="@string/zero" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 1}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 1)}"
+                        android:text="@string/one" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 2}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 2)}"
+                        android:text="@string/two" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 3}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 3)}"
+                        android:text="@string/three" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 4}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 4)}"
+                        android:text="@string/four" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{vm.getIpipAnswer(IpipQuestion.QUESTION_20.question) == 5}"
+                        android:onClick="@{() -> vm.handleIpipQuestion(IpipQuestion.QUESTION_20.question, 5)}"
+                        android:text="@string/five" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/footer_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/button_fragment_ipip_previous"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/arrow_next"
+                    android:rotation="180"/>
+
+                <ImageView
+                    android:id="@+id/button_fragment_ipip_next"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/arrow_next" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

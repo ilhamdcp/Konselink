@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bg_dark_blue</item>
+        <item name="colorPrimaryDark">@color/bg_dark_blue</item>
+        <item name="colorAccent">@color/bg_dark_blue</item>
+        <item name="colorControlNormal">@color/fade_gray</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+
+        <item name="android:windowBackground">@color/white</item>
+<!--        <item name="android:textColor">@color/gray</item>-->
+    </style>
+
+    <style name="TitleText">
+        <item name="android:textSize">@dimen/font_size_header</item>
+        <item name="android:textColor">@color/bg_dark_blue</item>
+        <item name="android:layout_marginTop">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HeaderText">
+        <item name="android:textSize">@dimen/font_size_header</item>
+        <item name="android:textColor">@color/bg_dark_blue</item>
+        <item name="android:layout_marginTop">20sp</item>
+    </style>
+
+    <style name="errorText">
+        <item name="android:textColor">@color/bg_dark_red</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

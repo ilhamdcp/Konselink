@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="result"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_counselor.model.retrofit.PreConsultationSurvey" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_margin_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/text_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/form_margin_top"
+                android:layout_weight="3"
+                android:text="@{result.answerKey + `:`}"
+                android:textColor="@color/bg_dark_blue"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/form_margin_top"
+                android:layout_weight="1"
+                android:text="@{String.valueOf(result.answerValue)}"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/form_margin_top"
+            android:background="@color/fade_gray" />
+    </LinearLayout>
+</layout>

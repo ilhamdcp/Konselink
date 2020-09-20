@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.PanasQuestion" />
+        <variable
+            name="vm"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.ConsultationViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_loading_preconsultation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:translationZ="5dp">
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                style="@style/SpinKitView.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="@color/bg_dark_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/main_container_default_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/panas_title"
+                    style="@style/HeaderText"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/bg_dark_red"
+                    android:text="@string/panas_instruction_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/bg_dark_red"
+                    android:text="@string/panas_instruction_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_1.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_1.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_1.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_2.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_2.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_2.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_3.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_3.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_3.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_4.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_4.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_4.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_5.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_5.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_5.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_6.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_6.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_6.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_7.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_7.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_7.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_8.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_8.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_8.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_9.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_9.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_9.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_10.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_10.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_10.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_11.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_11.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_11.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_12.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_12.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_12.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_13.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_13.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_13.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_14.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_14.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_14.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_15.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_15.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_15.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_16.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_16.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_16.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_17.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_17.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_17.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_18.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_18.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_18.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_19.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_19.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_19.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{PanasQuestion.QUESTION_20.question}" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 1}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 1)}"
+                            android:text="@string/one" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 2}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 2)}"
+                            android:text="@string/two" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 3}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 3)}"
+                            android:text="@string/three" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 4}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 4)}"
+                            android:text="@string/four" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 5}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 5)}"
+                            android:text="@string/five" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{vm.getPanasAnswer(PanasQuestion.QUESTION_20.question) == 6}"
+                            android:onClick="@{() -> vm.handlePanasQuestion(PanasQuestion.QUESTION_20.question, 6)}"
+                            android:text="@string/six" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/button_save_panas_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/main_container_default_margin"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/button_blue_gradient_square"
+                    android:paddingVertical="5dp"
+                    android:text="@string/save"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

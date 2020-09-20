@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.viewmodel.RegistrationViewModel" />
+
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.Gender" />
+
+        <import type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.constant.FormType" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_registration_form" />
+
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/psychological_record" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_radio_button_has_consulted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_consulted"
+                    android:textSize="@dimen/font_size_text" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_pirates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewmodel.registrationLiveData.hasConsultedBefore.equals(true)}"
+                        android:onClick="@{() -> viewmodel.handleHasConsultedBeforeRadioButton(true)}"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/radio_ninjas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewmodel.registrationLiveData.hasConsultedBefore.equals(false)}"
+                        android:onClick="@{() -> viewmodel.handleHasConsultedBeforeRadioButton(false)}"
+                        android:text="@string/no" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/text_error_gender"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errGender}" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_palce_consulted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:visibility="@{viewmodel.mutableLiveData.hasConsultedBefore ? View.VISIBLE : View.GONE}"
+                app:errorTextColor="@color/bg_dark_red">
+
+                <EditText
+                    android:id="@+id/form_place_consulted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/place_of_consultation"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.registrationLiveData.placeConsulted}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_place_consulted"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errPlaceConsulted}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top"
+                android:orientation="vertical"
+                android:visibility="@{viewmodel.mutableLiveData.hasConsultedBefore ? View.VISIBLE : View.GONE}">
+
+
+                <TextView
+                    android:id="@+id/label_layout_consultation_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_margin_right"
+                    android:text="@string/consultation_date" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_consultated_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/form_consulted_month"
+                            android:layout_width="@dimen/form_width_consultation_date"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:hint="@string/mm"
+                            android:inputType="date"
+                            android:maxLength="2"
+                            android:maxLines="1"
+                            android:text="@{viewmodel.registrationLiveData.yearConsulted.toString()}"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_size_text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_consultation_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/form_consulted_year"
+                            android:layout_width="@dimen/form_width_consultation_date"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/yyyy"
+                            android:inputType="date"
+                            android:maxLength="4"
+                            android:maxLines="1"
+                            android:text="@{viewmodel.registrationLiveData.yearConsulted.toString()}"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_size_text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_error_consultation_date"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errDateConsulted}" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_complaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/complaint"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:text="@{viewmodel.registrationLiveData.complaint}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_complaint"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errComplaint}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_solution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_solution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/solution"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:text="@{viewmodel.registrationLiveData.solution}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_solution"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errSolution}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_problem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/current_problem"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:text="@{viewmodel.registrationLiveData.problem}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_problem"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errProblem}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_effort_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_margin_top">
+
+                <EditText
+                    android:id="@+id/form_effort_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_registration"
+                    android:gravity="start|top"
+                    android:hint="@string/effort_done"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:text="@{viewmodel.registrationLiveData.effortDone}"
+                    android:textSize="@dimen/font_size_text" />
+
+                <TextView
+                    android:id="@+id/text_error_effort_done"
+                    style="@style/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.errEffortDone}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/footer_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/button_fragment_fifth_previous"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:rotation="180"
+                    android:src="@drawable/arrow_next" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/page_5"
+                    android:textSize="@dimen/font_size_text" />
+
+                <ImageView
+                    android:id="@+id/button_fragment_fifth_next"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/arrow_next" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

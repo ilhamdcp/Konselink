@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="form_margin_right">15dp</dimen>
+    <dimen name="form_width_birth">40dp</dimen>
+    <dimen name="form_width_birthyear">50dp</dimen>
+    <dimen name="form_width_consultation_date">65dp</dimen>
+    <dimen name="form_margin_top">5dp</dimen>
+    <dimen name="form_margin_bottom">5dp</dimen>
+    <dimen name="button_default_padding">5dp</dimen>
+    <dimen name="font_size_text">14sp</dimen>
+    <dimen name="footer_margin_top">25dp</dimen>
+
+    <dimen name="section_margin_top">25dp</dimen>
+
+    <dimen name="font_size_header">24sp</dimen>
+    <dimen name="spinner_item_margin">5dp</dimen>
+
+    <dimen name="button_zero_min_width">0dp</dimen>
+    <dimen name="button_zero_min_height">0dp</dimen>
+    <dimen name="main_container_default_margin">16dp</dimen>
+</resources>

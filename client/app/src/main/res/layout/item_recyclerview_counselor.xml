@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="counselor"
+            type="id.ac.ui.cs.mobileprogramming.ilham_darmawan.konselink_client.model.retrofit.Counselor" />
+    </data>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/counselor_display_picture"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                app:avatar="@{counselor.displayPictureUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/counselor_full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{counselor.fullname}"
+                android:textColor="@color/bg_dark_blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toEndOf="@id/counselor_display_picture"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/counselor_specialization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{counselor.specialization}"
+                android:textColor="@color/warm_grey"
+                android:textSize="14dp"
+                app:layout_constraintStart_toEndOf="@id/counselor_display_picture"
+                app:layout_constraintTop_toBottomOf="@id/counselor_full_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:background="@color/fade_gray"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_zero_min_width">0dp</dimen>
+    <dimen name="button_zero_min_height">0dp</dimen>
+    <dimen name="main_container_default_margin">16dp</dimen>
+</resources>
